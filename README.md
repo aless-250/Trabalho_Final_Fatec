@@ -6,10 +6,10 @@
 <div desenvolvedores><h3><b>Developers</b><h3>
 <h4>
 
-[![Alessandro](https://img.shields.io/github/followers/aless-250?label=AlessandroSouza&style=social)](https://github.com/aless-250)
-[![Adilson](https://img.shields.io/github/followers/adilsonLuz?label=adilsonLuz&style=social)](https://github.com/adilsonLuz) 
-[![Cristopher](https://img.shields.io/github/followers/crisperes?label=cristopherPeres&style=social)](https://github.com/crisperes)  [![Davi](https://img.shields.io/github/followers/PisomD?label=DaviSouza&style=social)](https://github.com/PisomD)
-[![Valdilei](https://img.shields.io/github/followers/valdileimilani-ADS?label=valdileiMilani&style=social)](https://github.com/valdileimilani-ADS)
+![GitHub followers](https://img.shields.io/github/followers/aless-250?label=AlessandroSouza&style=social)
+![GitHub followers](https://img.shields.io/github/followers/adilsonLuz?label=AdilsonLuz&style=social)
+![GitHub followers](https://img.shields.io/github/followers/crisperes?label=CristopherPeres&style=social)
+![GitHub followers](https://img.shields.io/github/followers/valdileimilani-ADS?label=ValdileiMilani&style=social)
 </h4>
 
 </div>
