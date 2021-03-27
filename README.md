@@ -20,8 +20,8 @@
 * Tecnologies
 * Project Stats
   
-<h1> Projects Stats <h1>
-<h3> Developing </h3>
+<h1> Projects Stats </h1>
+<h3> Developing <h3>
 
 <h1> #Features </h1>
 
