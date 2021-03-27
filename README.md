@@ -4,13 +4,14 @@
 <h2>This repositore is a project of students from Fatec Santana de Parnaíba</h2>
 <br>
 <div desenvolvedores><h3><b>Developers</b><h3>
-<h4>
 
-![GitHub followers](https://img.shields.io/github/followers/aless-250?label=AlessandroSouza&style=social)
-![GitHub followers](https://img.shields.io/github/followers/adilsonLuz?label=AdilsonLuz&style=social)
-![GitHub followers](https://img.shields.io/github/followers/crisperes?label=CristopherPeres&style=social)
-![GitHub followers](https://img.shields.io/github/followers/valdileimilani-ADS?label=ValdileiMilani&style=social)
-</h4>
+
+
+
+[![GitHub followers](https://img.shields.io/github/followers/adilsonLuz?label=AdilsonLuz&style=social)](https://github.com/adilsonLuz)[![GitHub followers](https://img.shields.io/github/followers/aless-250?label=AlessandroSouza&style=social)](https://github.com/aless-250)
+[![GitHub followers](https://img.shields.io/github/followers/crisperes?label=CristopherPeres&style=social)](https://github.com/crisperes)
+[![GitHub followers](https://img.shields.io/github/followers/pisomD?label=DaviSouza&style=social)](https://github.com/pisomD)
+[![GitHub followers](https://img.shields.io/github/followers/valdileimilani-ADS?label=ValdileiMilani&style=social)](https://github.com/valdileimilani-ADS)
 
 </div>
 
