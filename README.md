@@ -26,7 +26,7 @@
 
 <h1> #Features </h1>
 
-- [ ] Desktop Application
+- [ ] <b>Desktop Application </b>
         - [ ] Backlog
         - [ ] Requisits
         - [ ] Project
