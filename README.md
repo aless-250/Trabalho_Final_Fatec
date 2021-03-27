@@ -1,8 +1,8 @@
-<h1>Final Work Fatec Santana de Parnaíba</h1>
+<h1 font align = "Center">Final Work Fatec Santana de Parnaíba</h1>
 
- ![Inventario logo](./imagens/../Projeto%20-%20SistemaGuaxinim/build/classes/imagens/InventarioLogo.png)
-
-<h2 font align = "left"> Count ++ Iventory </font></h2> 
+<p align ="center"><img src="Projeto - SistemaGuaxinim/build/classes/imagens/InventarioFundoBrancoCaixaAzul.png"/>
+<p>
+<h2 font align = "center"> Count ++ Iventory</h2> 
 <h3 font align = "center"> Descriptions: </font></h3>
 This work presents the development of a software for patrimony inventory. Among the various existing protocols to perform the inventory, it sends the extracted information by reading a QRcode to a centralized database. It is also presented how software that implemented the loss of equity and its characteristics was implemented. 
 <br></br>
@@ -13,7 +13,7 @@ This work presents the development of a software for patrimony inventory. Among 
 * Table of Contents
 * Installation
 * How to Use
-   - Pré Requisitos
+   - Requeriments
    - Local Files
    - Remote Files
    - Multiple Files
@@ -22,7 +22,7 @@ This work presents the development of a software for patrimony inventory. Among 
 * Project Stats
  <br></br> 
 <h1 font align = "center"> Projects Stats </h1>
-<h3> Developing <h3>
+<img src="Projeto - SistemaGuaxinim/build/classes/imagens/UnderConstruction.png"/>
 
 <h1 font align = "center"> #Features </h1>
 
