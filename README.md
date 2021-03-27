@@ -13,7 +13,7 @@ This work presents the development of a software for patrimony inventory. Among 
 * Table of Contents
 * Installation
 * How to Use
-   - Pré Requisitos
+   - Requeriments
    - Local Files
    - Remote Files
    - Multiple Files
