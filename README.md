@@ -2,7 +2,7 @@
 
 <p align ="center"><img src="Projeto - SistemaGuaxinim/build/classes/imagens/InventarioFundoBrancoCaixaAzul.png"/>
 <p>
-<h2 font align = "center"> Count ++ Iventory</h2> 
+<h2 font align = "center"> Count ++ Inventory</h2> 
 <h3 font align = "center"> Descriptions: </font></h3>
 This work presents the development of a software for patrimony inventory. Among the various existing protocols to perform the inventory, it sends the extracted information by reading a QRcode to a centralized database. It is also presented how software that implemented the loss of equity and its characteristics was implemented. 
 <br></br>
