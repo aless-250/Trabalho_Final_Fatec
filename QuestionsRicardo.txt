@@ -7,10 +7,10 @@ Perguntas:
 Podemos deixar esse Repositório público? (para estudos e futuros alunos poderem consultar)
 R:
 
-Como é feito o inventário hoje?
+Como é feito o inventário hoje,existe algum programa?
 R:
 
-Quem e o responsavel pelo inventário? como é feito esse controle?
+Quem e o responsável pelo inventário? como é feito esse controle?
 R:
 
 O que você precisa no sistema de inventário?
