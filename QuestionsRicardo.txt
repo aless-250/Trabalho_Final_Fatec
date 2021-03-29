@@ -1,13 +1,9 @@
-Perguntas ao Cliente Ricardo Slavov 
-
-
-
 Perguntas:
 
 Podemos deixar esse Repositório público? (para estudos e futuros alunos poderem consultar)
 R:
 
-Como é feito o inventário hoje,existe algum programa?
+Como é feito o inventário hoje,existe algum programa? E qual a sua expectativa sobre o count++ inventory?
 R:
 
 Quem e o responsável pelo inventário? como é feito esse controle?
@@ -20,9 +16,6 @@ O que você precisa nos relatórios de inventário? (quais informações
 você precisa filtrar?)
 R:
 
-O quanto você pode investir para o projeto? (por exemplo: em tecnologia RFID)
-R:
-
 O que vai ser iventáriado?(ex: só patrimonios ou patrimos e insumos?)
 R:
 
@@ -31,3 +24,18 @@ R:
 
 Quais os niveis de acesso você acha que deveria ter esse sistema?
 R:
+
+Vc pretende mapear a sala por posição dos itens ou apenas por localidade?
+R
+
+Pretende utilizar o sw para também fazer controle de garantia e envido de patrimônio para manutenção?
+R.
+
+O que acontece com o item depois de depreciado?
+R
+
+Na visão geral esse sw atende suas necessidades?
+R
+
+Sobre Licenças vc tem alguma que queira ou não usar?
+R
