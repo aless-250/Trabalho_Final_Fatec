@@ -190,11 +190,17 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txNomeCad">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Digite aqui o nome completo"/>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txNomeCadActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txNomeEnderecoCad">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Digite aqui o endere&#xe7;o."/>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txNomeEnderecoCadActionPerformed"/>
           </Events>
@@ -215,6 +221,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txNomeCidadeCad">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Digite aqui a cidade, se preferir digite (Bairro / Cidade)."/>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txNomeCidadeCadActionPerformed"/>
           </Events>
@@ -258,6 +267,7 @@
                 <StringItem index="27" value="TO - Tocantins"/>
               </StringArray>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Selecione o Estado."/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -293,6 +303,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txNomeNumeroCad">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Digite aqui o Numero do endere&#xe7;o."/>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txNomeNumeroCadActionPerformed"/>
           </Events>
@@ -302,6 +315,7 @@
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
               <Format format="##/##/####" subtype="-1" type="5"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Digite aqui a Data de Nascimento sem uso dos caracteres especiais."/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelCPF">
@@ -314,6 +328,7 @@
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
               <Format format="###.###.###-##" subtype="-1" type="5"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Digite aqui o numero do CPF sem os pontos."/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jlRenda">
@@ -322,6 +337,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jtRenda">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Digite aqui o rendimento mensal (ex. Sal&#xe1;rio)."/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
@@ -352,7 +370,7 @@
                       <Component id="jCheckBoxGames" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jCheckBoxFutebol" min="-2" max="-2" attributes="0"/>
                       <Component id="jCheckBoxCorrer" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -471,13 +489,13 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Component id="btSalvar" min="-2" pref="85" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                  <Component id="btConsultar" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="btEditar" min="-2" pref="85" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="btCancelar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="btExcluir" min="-2" pref="85" max="-2" attributes="0"/>
-                  <EmptySpace pref="332" max="32767" attributes="0"/>
+                  <EmptySpace pref="346" max="32767" attributes="0"/>
                   <Component id="btSair" min="-2" pref="85" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -488,7 +506,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btConsultar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -503,22 +521,25 @@
         <Component class="javax.swing.JButton" name="btSalvar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Salvar"/>
+            <Property name="toolTipText" type="java.lang.String" value="Use para Salvar os dados digitado."/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btSalvarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btCancelar">
+        <Component class="javax.swing.JButton" name="btConsultar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Cancelar"/>
+            <Property name="text" type="java.lang.String" value="Consultar"/>
+            <Property name="toolTipText" type="java.lang.String" value="Use para Consultar o dado em memoria."/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btCancelarActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btConsultarActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btEditar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Editar"/>
+            <Property name="toolTipText" type="java.lang.String" value="Use para Editar o dado em memoria."/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btEditarActionPerformed"/>
@@ -527,6 +548,7 @@
         <Component class="javax.swing.JButton" name="btExcluir">
           <Properties>
             <Property name="text" type="java.lang.String" value="Excluir"/>
+            <Property name="toolTipText" type="java.lang.String" value="Use para Excluir o dado em memoria."/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btExcluirActionPerformed"/>
@@ -535,6 +557,7 @@
         <Component class="javax.swing.JButton" name="btSair">
           <Properties>
             <Property name="text" type="java.lang.String" value="Voltar"/>
+            <Property name="toolTipText" type="java.lang.String" value="Use para Voltar a tela principal."/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btSairActionPerformed"/>

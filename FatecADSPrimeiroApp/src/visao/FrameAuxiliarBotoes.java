@@ -5,6 +5,8 @@
  */
 package visao;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author aaa
@@ -28,40 +30,89 @@ public class FrameAuxiliarBotoes extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelTelaBotoes = new javax.swing.JPanel();
-        jLabelTitulo = new javax.swing.JLabel();
         jLabelImgTelaBotoes = new javax.swing.JLabel();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("FATEC Linguagem de Programação III  - Sistema de Cadastro");
-        setUndecorated(true);
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTreeMenuTelaInicial = new javax.swing.JTree();
 
         jPanelTelaBotoes.setLayout(null);
-
-        jLabelTitulo.setFont(new java.awt.Font("Euphorigenic", 2, 14)); // NOI18N
-        jLabelTitulo.setForeground(new java.awt.Color(0, 0, 51));
-        jLabelTitulo.setText("   Painel de Botões");
-        jPanelTelaBotoes.add(jLabelTitulo);
-        jLabelTitulo.setBounds(0, 10, 98, 16);
 
         jLabelImgTelaBotoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/TalaFundoBotoes.jpg"))); // NOI18N
         jPanelTelaBotoes.add(jLabelImgTelaBotoes);
         jLabelImgTelaBotoes.setBounds(-4, 0, 110, 457);
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("FATEC Linguagem de Programação III  - Sistema de Cadastro");
+        setBackground(new java.awt.Color(222, 222, 210));
+        setUndecorated(true);
+
+        jTreeMenuTelaInicial.setBackground(new java.awt.Color(222, 222, 210));
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
+        javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Clientes");
+        javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Pessoa Fisica");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Pessoa Juridica");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Ferramentas");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Calculadora Swing");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode(".");
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode(".");
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode(".");
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Fechar Menu");
+        treeNode1.add(treeNode2);
+        jTreeMenuTelaInicial.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jTreeMenuTelaInicial.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTreeMenuTelaInicial.setRootVisible(false);
+        jTreeMenuTelaInicial.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTreeMenuTelaInicialMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jTreeMenuTelaInicial);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanelTelaBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelTelaBotoes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 35, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        setBounds(153, 135, 102, 459);
+        setBounds(70, 135, 184, 459);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTreeMenuTelaInicialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTreeMenuTelaInicialMouseClicked
+        // Metodo de configuração do menu em arvore jTree
+        String menu = jTreeMenuTelaInicial.getLastSelectedPathComponent().toString();
+        
+        if(menu.equals("Pessoa Fisica")){
+            FramePessoaFisica frameCadastro = new FramePessoaFisica();
+            frameCadastro.setVisible(true);
+        }//fim do if Cad Pessoa Fisica
+        if(menu.equals("Pessoa Juridica")){
+            FramePessoaJuridica framePessoaJuridica = new FramePessoaJuridica();
+            framePessoaJuridica.setVisible(true);
+        }//fim do if Cad Pessoa Juridica
+        if(menu.equals("Calculadora Swing")){
+            FrameCalculadora frameCalculadora = new FrameCalculadora();
+            frameCalculadora.setVisible(true);
+        }//fim do if Calculadora Swing
+        if(menu.equals("Fechar Menu")){
+            dispose();
+        }//fim do if Sair do Sistema
+    }//GEN-LAST:event_jTreeMenuTelaInicialMouseClicked
 
     /**
      * @param args the command line arguments
@@ -100,7 +151,8 @@ public class FrameAuxiliarBotoes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabelImgTelaBotoes;
-    private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JPanel jPanelTelaBotoes;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTree jTreeMenuTelaInicial;
     // End of variables declaration//GEN-END:variables
 }

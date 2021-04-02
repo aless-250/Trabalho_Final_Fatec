@@ -2,55 +2,50 @@ package visao;
 
 import java.util.Date;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * Classe cirada para ser a classe na geração de objetos do tipo Cliente
+ * Classe cirada para ser a classe na geração de objetos do tipo ClientePJ
  * que será manipulado em memoria.
  * @author Alessandro S Silva
  * @Since Classe criada em 02/04/2021 as 15:55
  */
-public class Cliente {
-    String nome;
-    Date nascimento;
-    String endereço;
-    int numeroEndereço;
-    String cidade;
-    String uf;
-    String cpf;
-    String sexo;
-    float renda;
-    boolean leitura;
-    boolean futebol;
-    boolean pescaria;
-    boolean danca;
-    boolean vedeogame;
-    boolean dança;
-    boolean corrida;
-    boolean cozinhar;
-    boolean musica;
+
+public class ClientePJ {
+    private String razaosocial;
+    private Date inauguracao;
+    private String endereço;
+    private int numeroEndereço;
+    private String cidade;
+    private String uf;
+    private String cnpj;
+    private String sexo;
+    private float renda;
+    private boolean leitura;
+    private boolean futebol;
+    private boolean pescaria;
+    private boolean danca;
+    private boolean vedeogame;
+    private boolean dança;
+    private boolean corrida;
+    private boolean cozinhar;
+    private boolean musica;
     
     //Metodo Construtor - responsavel por criar uma instancia na memoria
-    public Cliente(){
+    public ClientePJ(){
         //Construtor vazio;
      
     }//fim da instancia cliente
 
-    public Cliente(String nome, Date nascimento, String endereço, int numeroEndereço, String cidade, 
-            String uf, String cpf, String sexo, float renda, boolean leitura, boolean futebol, boolean pescaria, 
+    public ClientePJ(String razaosocial, Date inauguracao, String endereço, int numeroEndereço, String cidade, 
+            String uf, String cnpj, String sexo, float renda, boolean leitura, boolean futebol, boolean pescaria, 
             boolean danca, boolean vedeogame, boolean dança, boolean corrida, boolean cozinhar, boolean musica) {
         
-        this.nome = nome;
-        this.nascimento = nascimento;
+        this.razaosocial = razaosocial;
+        this.inauguracao = inauguracao;
         this.endereço = endereço;
         this.numeroEndereço = numeroEndereço;
         this.cidade = cidade;
         this.uf = uf;
-        this.cpf = cpf;
+        this.cnpj = cnpj;
         this.sexo = sexo;
         this.renda = renda;
         this.leitura = leitura;
@@ -69,20 +64,20 @@ public class Cliente {
     // Set (setar) - para guardar a informacao no atributo (instancia) 
     // Get (pegar) - a informacao de um atributo (instancia)
 
-    public String getNome() {
-        return nome;
+    public String getRazaosocial() {
+        return razaosocial;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setRazaosocial(String razaosocial) {
+        this.razaosocial = razaosocial;
     }
 
-    public Date getNascimento() {
-        return nascimento;
+    public Date getInauguracao() {
+        return inauguracao;
     }
 
-    public void setNascimento(Date nascimento) {
-        this.nascimento = nascimento;
+    public void setInauguracao(Date inauguracao) {
+        this.inauguracao = inauguracao;
     }
 
     public String getEndereço() {
@@ -112,21 +107,17 @@ public class Cliente {
     public String getUf() {
         return uf;
     }
-/**
- * O conteúdo deste campo virá do item selecionado na ComboBox
- * @param uf Uma String escolhido pelo usuário
- * @return Não retorna nada.
- */
+
     public void setUf(String uf) {
         this.uf = uf;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getCnpj() {
+        return cnpj;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
     }
 
     public String getSexo() {
@@ -215,5 +206,6 @@ public class Cliente {
 
     public void setMusica(boolean musica) {
         this.musica = musica;
-    }          
+    }
+    
 }//fim da classe

@@ -64,6 +64,7 @@ public class FrameTelaInicial extends javax.swing.JFrame {
         jSubMenuPessoaJuridicaTelaPrincipal = new javax.swing.JMenuItem();
         jMenuFerramentasTelaPrincipal = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItemArvoresBotoes = new javax.swing.JMenuItem();
         jMenuSairTelaPrincipal = new javax.swing.JMenu();
         jSubMenuSair = new javax.swing.JMenuItem();
 
@@ -92,7 +93,7 @@ public class FrameTelaInicial extends javax.swing.JFrame {
         jPanelDataHoraTelaPrincipal.add(jLHoraTelaPrincipal);
 
         getContentPane().add(jPanelDataHoraTelaPrincipal);
-        jPanelDataHoraTelaPrincipal.setBounds(0, 380, 850, 20);
+        jPanelDataHoraTelaPrincipal.setBounds(10, 380, 840, 20);
 
         jMenuArquivoTelaPrincipal.setText("Arquivo");
 
@@ -143,6 +144,15 @@ public class FrameTelaInicial extends javax.swing.JFrame {
             }
         });
         jMenuFerramentasTelaPrincipal.add(jMenuItem1);
+
+        jMenuItemArvoresBotoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/menuArvore.png"))); // NOI18N
+        jMenuItemArvoresBotoes.setText("Menu Arvore");
+        jMenuItemArvoresBotoes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemArvoresBotoesActionPerformed(evt);
+            }
+        });
+        jMenuFerramentasTelaPrincipal.add(jMenuItemArvoresBotoes);
 
         jMenuTelaPrincipal.add(jMenuFerramentasTelaPrincipal);
 
@@ -213,6 +223,12 @@ public class FrameTelaInicial extends javax.swing.JFrame {
         
     }//GEN-LAST:event_formWindowOpened
 
+    private void jMenuItemArvoresBotoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemArvoresBotoesActionPerformed
+        // Chamada do frame Auxiliar Botoes
+        FrameAuxiliarBotoes frameAuxiliarBotoes = new FrameAuxiliarBotoes();
+        frameAuxiliarBotoes.setVisible(true);
+    }//GEN-LAST:event_jMenuItemArvoresBotoesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -258,6 +274,7 @@ public class FrameTelaInicial extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuClientesTelaPrincipal;
     private javax.swing.JMenu jMenuFerramentasTelaPrincipal;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItemArvoresBotoes;
     private javax.swing.JMenu jMenuSairTelaPrincipal;
     private javax.swing.JMenuBar jMenuTelaPrincipal;
     private javax.swing.JPanel jPanelDataHoraTelaPrincipal;

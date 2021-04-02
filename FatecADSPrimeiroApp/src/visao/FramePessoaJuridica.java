@@ -10,6 +10,11 @@ package visao;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -18,7 +23,10 @@ import java.net.URL;
  */
 
 public class FramePessoaJuridica extends javax.swing.JFrame {
-
+//Cria um objeto do tipo Cliente sem nenhum dado atribuido / Uso do contrutor vazio
+ClientePJ clientePJ = new ClientePJ();    
+SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); //Cria um objeto formatador para a Data de Nascimento
+ 
 /**
  *Sistema de Cadastro - Tela Inicial
  *Aula de Linguagem de Programação III
@@ -78,7 +86,7 @@ public class FramePessoaJuridica extends javax.swing.JFrame {
         jbTituloCadPJ = new javax.swing.JLabel();
         jPanelBotoesCadPJ = new javax.swing.JPanel();
         btSalvarCadPJ = new javax.swing.JButton();
-        btCancelarCadPJ = new javax.swing.JButton();
+        btConsultarCadPJ = new javax.swing.JButton();
         btEditarCadPJ = new javax.swing.JButton();
         btExcluirCadPJ = new javax.swing.JButton();
         btSairCadPJ = new javax.swing.JButton();
@@ -92,16 +100,18 @@ public class FramePessoaJuridica extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jPanelTelaCadastroPj.setBackground(new java.awt.Color(222, 222, 210));
-        jPanelTelaCadastroPj.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dados do Cliente", 2, 0));
+        jPanelTelaCadastroPj.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dados do Cliente", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
 
         lbEnderecoCadPJ.setText("Endereço:.");
 
+        txNomeCadPJ.setToolTipText("Digite aqui a Razão Social da empresa.");
         txNomeCadPJ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txNomeCadPJActionPerformed(evt);
             }
         });
 
+        txEnderecoCadPJ.setToolTipText("Digite aqui o Endereço da empresa.");
         txEnderecoCadPJ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txEnderecoCadPJActionPerformed(evt);
@@ -114,6 +124,7 @@ public class FramePessoaJuridica extends javax.swing.JFrame {
 
         lbSexoCadPJ.setText("Sexo:.");
 
+        txNomeCidadeCadPJ.setToolTipText("Digite aqui a Cidade da empresa.");
         txNomeCidadeCadPJ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txNomeCidadeCadPJActionPerformed(evt);
@@ -123,6 +134,7 @@ public class FramePessoaJuridica extends javax.swing.JFrame {
         lbEstadoCadCadPJ.setText("Estado:.");
 
         cbEstadoCadPJ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "AC - Acre", "AL - Alagoas", "AP - Amapá", "AM - Amazonas", "BA - Bahia ", "CE - Ceará", "DF - Distrito Federal", "ES - Espírito Santo", "GO - Goiás", "MA - Maranhão", "MT - Mato Grosso", "MS - Mato Grosso do Sul", "MG - Minas Gerais", "PA - Pará", "PB - Paraíba", "PR - Paraná", "PE - Pernambuco", "PI - Piauí", "RR - Roraima", "RO - Rondônia", "RJ - Rio de Janeiro", "RN - Rio Grande do Norte", "RS - Rio Grande do Sul", "SC - Santa Catarina", "SP - São Paulo", "SE - Sergipe", "TO - Tocantins" }));
+        cbEstadoCadPJ.setToolTipText("Selecione aqui o Estado da empresa.");
 
         lbCidadeCadPJ.setText("Cidade:.");
 
@@ -144,6 +156,7 @@ public class FramePessoaJuridica extends javax.swing.JFrame {
 
         jLNumeroCadPJ.setText("Numero:.");
 
+        txNumeroCadPJ.setToolTipText("Digite aqui o Numero do endereço da empresa.");
         txNumeroCadPJ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txNumeroCadPJActionPerformed(evt);
@@ -155,6 +168,7 @@ public class FramePessoaJuridica extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jFormattedTextFieldDtINascimentoCadPJ.setToolTipText("Digite aqui a Data de Inauguração da empresa.");
 
         jLCNPJCadPJ.setText("CNPJ:.");
 
@@ -164,117 +178,115 @@ public class FramePessoaJuridica extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         jFCNPJCadPJ.setText("  .   .   /    - ");
+        jFCNPJCadPJ.setToolTipText("Digite aqui o CNPJ da empresa.");
 
         jlCapitalGiroCadPJ.setText("Renda:.");
+
+        jtRendaCadPJ.setToolTipText("Digite aqui a Renda Mensal da empresa.");
 
         javax.swing.GroupLayout jPanelTelaCadastroPjLayout = new javax.swing.GroupLayout(jPanelTelaCadastroPj);
         jPanelTelaCadastroPj.setLayout(jPanelTelaCadastroPjLayout);
         jPanelTelaCadastroPjLayout.setHorizontalGroup(
             jPanelTelaCadastroPjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelTelaCadastroPjLayout.createSequentialGroup()
-                .addGap(5, 5, 5)
-                .addComponent(lbRazaoSocialCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
-                .addComponent(txNomeCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lbDtInauguracaoCadPJ)
-                .addGap(0, 0, 0)
-                .addComponent(jFormattedTextFieldDtINascimentoCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanelTelaCadastroPjLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(lbEnderecoCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
-                .addComponent(txEnderecoCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57)
-                .addComponent(jLNumeroCadPJ)
-                .addGap(5, 5, 5)
-                .addComponent(txNumeroCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanelTelaCadastroPjLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(lbCidadeCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
-                .addComponent(txNomeCidadeCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63)
-                .addGroup(jPanelTelaCadastroPjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbEstadoCadCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanelTelaCadastroPjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanelTelaCadastroPjLayout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(cbEstadoCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))))
-            .addGroup(jPanelTelaCadastroPjLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(lbSexoCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
-                .addComponent(jRadioButtonMasculinoCadPJ)
-                .addGap(18, 18, 18)
-                .addComponent(jRadioButtonFemininoCadPJ)
-                .addGap(19, 19, 19)
-                .addComponent(jlCapitalGiroCadPJ)
-                .addGap(7, 7, 7)
-                .addComponent(jtRendaCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(71, 71, 71)
-                .addComponent(jLCNPJCadPJ)
-                .addGap(5, 5, 5)
-                .addComponent(jFCNPJCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(37, 37, 37)
+                        .addComponent(lbSexoCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRadioButtonMasculinoCadPJ)
+                        .addGap(18, 18, 18)
+                        .addComponent(jRadioButtonFemininoCadPJ)
+                        .addGap(18, 18, 18)
+                        .addComponent(jlCapitalGiroCadPJ)
+                        .addGap(8, 8, 8)
+                        .addComponent(jtRendaCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(71, 71, 71)
+                        .addComponent(jLCNPJCadPJ)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jFCNPJCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelTelaCadastroPjLayout.createSequentialGroup()
+                        .addGroup(jPanelTelaCadastroPjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelTelaCadastroPjLayout.createSequentialGroup()
+                                .addGap(23, 23, 23)
+                                .addGroup(jPanelTelaCadastroPjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbCidadeCadPJ, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lbEnderecoCadPJ, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(23, 23, 23))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelTelaCadastroPjLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lbRazaoSocialCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                        .addGroup(jPanelTelaCadastroPjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txNomeCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txEnderecoCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txNomeCidadeCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanelTelaCadastroPjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelTelaCadastroPjLayout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addGroup(jPanelTelaCadastroPjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lbEstadoCadCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLNumeroCadPJ)))
+                            .addGroup(jPanelTelaCadastroPjLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lbDtInauguracaoCadPJ)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelTelaCadastroPjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txNumeroCadPJ, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jFormattedTextFieldDtINascimentoCadPJ, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbEstadoCadPJ, 0, 173, Short.MAX_VALUE))))
+                .addGap(42, 42, Short.MAX_VALUE))
         );
         jPanelTelaCadastroPjLayout.setVerticalGroup(
             jPanelTelaCadastroPjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelTelaCadastroPjLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addContainerGap()
                 .addGroup(jPanelTelaCadastroPjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txNomeCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextFieldDtINascimentoCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanelTelaCadastroPjLayout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addGroup(jPanelTelaCadastroPjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jFormattedTextFieldDtINascimentoCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelTelaCadastroPjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLNumeroCadPJ)
+                            .addComponent(txNumeroCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelTelaCadastroPjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cbEstadoCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbEstadoCadCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanelTelaCadastroPjLayout.createSequentialGroup()
+                        .addGroup(jPanelTelaCadastroPjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txNomeCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbRazaoSocialCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbDtInauguracaoCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(6, 6, 6)
-                .addGroup(jPanelTelaCadastroPjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txEnderecoCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txNumeroCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanelTelaCadastroPjLayout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addGroup(jPanelTelaCadastroPjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbEnderecoCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLNumeroCadPJ))))
-                .addGap(12, 12, 12)
+                            .addComponent(lbDtInauguracaoCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelTelaCadastroPjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txEnderecoCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbEnderecoCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelTelaCadastroPjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txNomeCidadeCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbCidadeCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(jPanelTelaCadastroPjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelTelaCadastroPjLayout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(lbCidadeCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanelTelaCadastroPjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jFCNPJCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLCNPJCadPJ)))
                     .addGroup(jPanelTelaCadastroPjLayout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(txNomeCidadeCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelTelaCadastroPjLayout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(lbEstadoCadCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(cbEstadoCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4)
-                .addGroup(jPanelTelaCadastroPjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelTelaCadastroPjLayout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(lbSexoCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jRadioButtonMasculinoCadPJ)
-                    .addComponent(jRadioButtonFemininoCadPJ)
-                    .addGroup(jPanelTelaCadastroPjLayout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(jlCapitalGiroCadPJ))
-                    .addGroup(jPanelTelaCadastroPjLayout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(jtRendaCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelTelaCadastroPjLayout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(jLCNPJCadPJ))
-                    .addGroup(jPanelTelaCadastroPjLayout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(jFCNPJCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanelTelaCadastroPjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtRendaCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlCapitalGiroCadPJ)
+                            .addComponent(jRadioButtonFemininoCadPJ)
+                            .addComponent(jRadioButtonMasculinoCadPJ)
+                            .addComponent(lbSexoCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(19, 19, 19))
         );
 
         getContentPane().add(jPanelTelaCadastroPj);
-        jPanelTelaCadastroPj.setBounds(0, 50, 830, 170);
+        jPanelTelaCadastroPj.setBounds(0, 40, 830, 190);
 
         jPanelCadastroPJ2.setBackground(new java.awt.Color(222, 222, 210));
-        jPanelCadastroPJ2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Hobbies do Cliente", 2, 0));
+        jPanelCadastroPJ2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Hobbies do Cliente", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
 
         jCheckBoxLeituraCadPJ.setText("Leitura");
 
@@ -302,7 +314,7 @@ public class FramePessoaJuridica extends javax.swing.JFrame {
                     .addComponent(jCheckBoxLeituraCadPJ)
                     .addComponent(jCheckBoxGamesCadPJ))
                 .addGap(163, 163, 163)
-                .addGroup(jPanelCadastroPJ2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanelCadastroPJ2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jCheckBoxFutebolCadPJ)
                     .addComponent(jCheckBoxCorrerCadPJ))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
@@ -334,7 +346,7 @@ public class FramePessoaJuridica extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanelCadastroPJ2);
-        jPanelCadastroPJ2.setBounds(0, 230, 831, 100);
+        jPanelCadastroPJ2.setBounds(0, 240, 831, 100);
 
         jbTituloCadPJ.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jbTituloCadPJ.setText("Tela de Cadastro de Clientes Pessoa Juridica ");
@@ -345,20 +357,23 @@ public class FramePessoaJuridica extends javax.swing.JFrame {
         jPanelBotoesCadPJ.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         btSalvarCadPJ.setText("Salvar");
+        btSalvarCadPJ.setToolTipText("Use para Salvar o dado em memoria.");
         btSalvarCadPJ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btSalvarCadPJActionPerformed(evt);
             }
         });
 
-        btCancelarCadPJ.setText("Cancelar");
-        btCancelarCadPJ.addActionListener(new java.awt.event.ActionListener() {
+        btConsultarCadPJ.setText("Consultar");
+        btConsultarCadPJ.setToolTipText("Use para Editar o dado em memoria.");
+        btConsultarCadPJ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCancelarCadPJActionPerformed(evt);
+                btConsultarCadPJActionPerformed(evt);
             }
         });
 
         btEditarCadPJ.setText("Editar");
+        btEditarCadPJ.setToolTipText("Use para Editar o dado em memoria.");
         btEditarCadPJ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btEditarCadPJActionPerformed(evt);
@@ -366,6 +381,7 @@ public class FramePessoaJuridica extends javax.swing.JFrame {
         });
 
         btExcluirCadPJ.setText("Excluir");
+        btExcluirCadPJ.setToolTipText("Use para Excluir o dado em memoria.");
         btExcluirCadPJ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btExcluirCadPJActionPerformed(evt);
@@ -373,6 +389,7 @@ public class FramePessoaJuridica extends javax.swing.JFrame {
         });
 
         btSairCadPJ.setText("Voltar");
+        btSairCadPJ.setToolTipText("Use para Voltar para a Tela Principal.");
         btSairCadPJ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btSairCadPJActionPerformed(evt);
@@ -386,13 +403,13 @@ public class FramePessoaJuridica extends javax.swing.JFrame {
             .addGroup(jPanelBotoesCadPJLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(btSalvarCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
+                .addComponent(btConsultarCadPJ)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btEditarCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btCancelarCadPJ)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btExcluirCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 332, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 346, Short.MAX_VALUE)
                 .addComponent(btSairCadPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -401,7 +418,7 @@ public class FramePessoaJuridica extends javax.swing.JFrame {
             .addGroup(jPanelBotoesCadPJLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelBotoesCadPJLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btCancelarCadPJ)
+                    .addComponent(btConsultarCadPJ)
                     .addComponent(btExcluirCadPJ)
                     .addComponent(btEditarCadPJ)
                     .addComponent(btSalvarCadPJ)
@@ -410,7 +427,7 @@ public class FramePessoaJuridica extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanelBotoesCadPJ);
-        jPanelBotoesCadPJ.setBounds(0, 332, 831, 60);
+        jPanelBotoesCadPJ.setBounds(0, 340, 831, 50);
 
         jLImgFundoCadPJ.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/TalaFundoCad.jpg"))); // NOI18N
         getContentPane().add(jLImgFundoCadPJ);
@@ -421,7 +438,33 @@ public class FramePessoaJuridica extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btSalvarCadPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarCadPJActionPerformed
-        // TODO add your handling code here:
+        //Codigo do botão Salva em memoria
+        clientePJ.setRazaosocial(txNomeCadPJ.getText());
+    try {
+        clientePJ.setInauguracao(formato.parse(jFormattedTextFieldDtINascimentoCadPJ.getText()));
+        } 
+        catch (ParseException ex) {
+            Logger.getLogger(FramePessoaJuridica.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        clientePJ.setEndereço(txEnderecoCadPJ.getText());
+        clientePJ.setNumeroEndereço(Integer.parseInt(txNumeroCadPJ.getText())); //Use o Parse para fazer a conversão para Inteiro
+        clientePJ.setCidade(txNomeCidadeCadPJ.getText());
+        clientePJ.setUf((String) cbEstadoCadPJ.getSelectedItem()); //Pega o item selecionado da Combo Box
+        clientePJ.setCnpj(jFCNPJCadPJ.getText());
+        clientePJ.setSexo(jRadioButtonMasculinoCadPJ.isSelected() == true?"Masculino":"Feminino"); //Tratamento do RadioButton
+        clientePJ.setRenda(Float.parseFloat(jtRendaCadPJ.getText()));
+        clientePJ.setLeitura(jCheckBoxLeituraCadPJ.isSelected());
+        clientePJ.setFutebol(jCheckBoxFutebolCadPJ.isSelected());
+        clientePJ.setPescaria(jCheckBoxPescariaCadPJ.isSelected());
+        clientePJ.setDanca(jCheckBoxDancaCadPJ.isSelected());
+        clientePJ.setMusica(jCheckBoxMusicaCadPJ.isSelected());
+        clientePJ.setVedeogame(jCheckBoxGamesCadPJ.isSelected());
+        clientePJ.setCorrida(jCheckBoxCorrerCadPJ.isSelected());
+        clientePJ.setCozinhar(jCheckBoxCozinharCadPJ.isSelected());
+        
+        JOptionPane.showMessageDialog(null, "Dados inseridos com sucesso no objeto que está sendo instanciado na memória.");
+        
+        limparCampos();//Metodo para limpar todos os campos do frame
     }//GEN-LAST:event_btSalvarCadPJActionPerformed
 
     private void txNomeCadPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txNomeCadPJActionPerformed
@@ -444,16 +487,92 @@ public class FramePessoaJuridica extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txNumeroCadPJActionPerformed
 
-    private void btCancelarCadPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarCadPJActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btCancelarCadPJActionPerformed
+    private void btConsultarCadPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarCadPJActionPerformed
+        // Metodo para recuperar o dado em memoria
+        txNomeCadPJ.setText(clientePJ.getRazaosocial());
+        txNomeCadPJ.setEnabled(false);//Trava o campo - Não Editavel
+        
+        jFormattedTextFieldDtINascimentoCadPJ.setText(formato.format(clientePJ.getInauguracao()));
+        jFormattedTextFieldDtINascimentoCadPJ.setEnabled(false);//Trava o campo - Não Editavel
+        
+        txEnderecoCadPJ.setText(clientePJ.getEndereço());
+        txEnderecoCadPJ.setEnabled(false);//Trava o campo - Não Editavel
+        
+        txNumeroCadPJ.setText(String.valueOf(clientePJ.getNumeroEndereço()));
+        txNumeroCadPJ.setEnabled(false);//Trava o campo - Não Editavel
+                
+        txNomeCidadeCadPJ.setText(clientePJ.getCidade());
+        txNomeCidadeCadPJ.setEnabled(false);//Trava o campo - Não Editavel
+                
+        cbEstadoCadPJ.setSelectedItem(clientePJ.getUf());
+        cbEstadoCadPJ.setEnabled(false);//Trava o campo - Não Editavel
+                
+        jFCNPJCadPJ.setText(clientePJ.getCnpj());
+        jFCNPJCadPJ.setEnabled(false);//Trava o campo - Não Editavel
+                
+        jRadioButtonMasculinoCadPJ.setSelected("Masculino".equals(clientePJ.getSexo()));
+        jRadioButtonMasculinoCadPJ.setEnabled(false);//Trava o campo - Não Editavel
+                
+        jRadioButtonFemininoCadPJ.setSelected("Feminino".equals(clientePJ.getSexo()));
+        jRadioButtonFemininoCadPJ.setEnabled(false);//Trava o campo - Não Editavel
+                
+        jtRendaCadPJ.setText(String.valueOf(clientePJ.getRenda()));
+        jtRendaCadPJ.setEnabled(false);//Trava o campo - Não Editavel
+                
+        jCheckBoxLeituraCadPJ.setSelected(clientePJ.isLeitura());
+        jCheckBoxLeituraCadPJ.setEnabled(false);//Trava o campo - Não Editavel
+                
+        jCheckBoxFutebolCadPJ.setSelected(clientePJ.isFutebol());
+        jCheckBoxFutebolCadPJ.setEnabled(false);//Trava o campo - Não Editavel
+                
+        jCheckBoxPescariaCadPJ.setSelected(clientePJ.isPescaria());
+        jCheckBoxPescariaCadPJ.setEnabled(false);//Trava o campo - Não Editavel
+                
+        jCheckBoxDancaCadPJ.setSelected(clientePJ.isDanca());
+        jCheckBoxDancaCadPJ.setEnabled(false);//Trava o campo - Não Editavel
+                
+        jCheckBoxMusicaCadPJ.setSelected(clientePJ.isMusica());
+        jCheckBoxMusicaCadPJ.setEnabled(false);//Trava o campo - Não Editavel
+                
+        jCheckBoxGamesCadPJ.setSelected(clientePJ.isVedeogame());
+        jCheckBoxGamesCadPJ.setEnabled(false);//Trava o campo - Não Editavel
+                
+        jCheckBoxCorrerCadPJ.setSelected(clientePJ.isCorrida());
+        jCheckBoxCorrerCadPJ.setEnabled(false);//Trava o campo - Não Editavel
+                
+        jCheckBoxCozinharCadPJ.setSelected(clientePJ.isCozinhar());
+        jCheckBoxCozinharCadPJ.setEnabled(false);//Trava o campo - Não Editavel 
+        
+    }//GEN-LAST:event_btConsultarCadPJActionPerformed
 
     private void btEditarCadPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarCadPJActionPerformed
-        // TODO add your handling code here:
+        // Habilita a Edição dos campos
+        txNomeCadPJ.setEnabled(true);
+        jFormattedTextFieldDtINascimentoCadPJ.setEnabled(true);
+        txEnderecoCadPJ.setEnabled(true);
+        txNumeroCadPJ.setEnabled(true);
+        txNomeCidadeCadPJ.setEnabled(true);
+        cbEstadoCadPJ.setEnabled(true);
+        jFCNPJCadPJ.setEnabled(true);
+        jRadioButtonMasculinoCadPJ.setEnabled(true);
+        jRadioButtonFemininoCadPJ.setEnabled(true);
+        jtRendaCadPJ.setEnabled(true);
+        jCheckBoxLeituraCadPJ.setEnabled(true);
+        jCheckBoxFutebolCadPJ.setEnabled(true);
+        jCheckBoxPescariaCadPJ.setEnabled(true);
+        jCheckBoxDancaCadPJ.setEnabled(true);
+        jCheckBoxMusicaCadPJ.setEnabled(true);
+        jCheckBoxGamesCadPJ.setEnabled(true);
+        jCheckBoxCorrerCadPJ.setEnabled(true);
+        jCheckBoxCozinharCadPJ.setEnabled(true);        
     }//GEN-LAST:event_btEditarCadPJActionPerformed
 
     private void btExcluirCadPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirCadPJActionPerformed
-        // TODO add your handling code here:
+        // Exclui o objeto da memoria
+        JOptionPane.showMessageDialog(null, "Deseja excluir esse cliente da memoria? ", "Exclusão do cliente", -1);
+        limparCampos();
+        clientePJ = null; //apaga o cliente da memoria
+        JOptionPane.showMessageDialog(null,"Cliente excluido com sucesso!!!.");         
     }//GEN-LAST:event_btExcluirCadPJActionPerformed
 
     private void btSairCadPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairCadPJActionPerformed
@@ -466,7 +585,28 @@ public class FramePessoaJuridica extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButtonMasculinoCadPJActionPerformed
 
-    /**
+    //Metodo para limpar campos do frame
+    public void limparCampos(){
+        txNomeCadPJ.setText("");
+        jFormattedTextFieldDtINascimentoCadPJ.setText("");
+        txEnderecoCadPJ.setText("");
+        txNumeroCadPJ.setText("");
+        txNomeCidadeCadPJ.setText("");
+        cbEstadoCadPJ.setSelectedIndex(0);
+        jFCNPJCadPJ.setText("");
+        buttonGroupoSexoCadPJ.clearSelection();
+        jtRendaCadPJ.setText("");
+        jCheckBoxLeituraCadPJ.setSelected(false);
+        jCheckBoxFutebolCadPJ.setSelected(false);
+        jCheckBoxPescariaCadPJ.setSelected(false);
+        jCheckBoxDancaCadPJ.setSelected(false);
+        jCheckBoxMusicaCadPJ.setSelected(false);
+        jCheckBoxGamesCadPJ.setSelected(false);
+        jCheckBoxCorrerCadPJ.setSelected(false);
+        jCheckBoxCozinharCadPJ.setSelected(false);
+    }
+    
+     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -493,260 +633,6 @@ public class FramePessoaJuridica extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
@@ -755,7 +641,7 @@ public class FramePessoaJuridica extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btCancelarCadPJ;
+    private javax.swing.JButton btConsultarCadPJ;
     private javax.swing.JButton btEditarCadPJ;
     private javax.swing.JButton btExcluirCadPJ;
     private javax.swing.JButton btSairCadPJ;

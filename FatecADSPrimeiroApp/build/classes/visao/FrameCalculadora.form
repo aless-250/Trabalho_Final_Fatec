@@ -127,6 +127,7 @@
         <Component class="javax.swing.JTextField" name="tfNum1">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="toolTipText" type="java.lang.String" value="Digite aqui o 1&#xb0; numero da opera&#xe7;&#xe3;o."/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfNum1ActionPerformed"/>
@@ -135,6 +136,7 @@
         <Component class="javax.swing.JTextField" name="tfNum2">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="toolTipText" type="java.lang.String" value="Digite aqui o 2&#xb0; numero da opera&#xe7;&#xe3;o."/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfResultado">
@@ -146,6 +148,7 @@
               <Color blue="0" green="0" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="toolTipText" type="java.lang.String" value="Veja aqui o  Resultado da opera&#xe7;&#xe3;o"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -233,6 +236,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/imagem/sair.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Use para Sair da aplica&#xe7;&#xe3;o calculadora."/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
@@ -246,7 +250,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/imagem/subtracao.png"/>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value="Clique aqui para realizar opera&#xe7;&#xe3;o de Adi&#xe7;&#xe3;o"/>
+            <Property name="toolTipText" type="java.lang.String" value="Clique aqui para realizar opera&#xe7;&#xe3;o de Subtra&#xe7;&#xe3;o"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btSubtrairActionPerformed"/>
@@ -257,7 +261,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/imagem/multiplicacao.png"/>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value="Clique aqui para realizar opera&#xe7;&#xe3;o de Adi&#xe7;&#xe3;o"/>
+            <Property name="toolTipText" type="java.lang.String" value="Clique aqui para realizar opera&#xe7;&#xe3;o de Multiplica&#xe7;&#xe3;o"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btMultiplicarActionPerformed"/>
@@ -268,7 +272,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/imagem/divisao.png"/>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value="Clique aqui para realizar opera&#xe7;&#xe3;o de Adi&#xe7;&#xe3;o"/>
+            <Property name="toolTipText" type="java.lang.String" value="Clique aqui para realizar opera&#xe7;&#xe3;o de Divis&#xe3;o"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btDividirActionPerformed"/>
@@ -279,6 +283,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/imagem/limpar.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Use para Limpar os campos"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
@@ -292,6 +297,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/imagem/potencia.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Clique aqui para realizar opera&#xe7;&#xe3;o de exponencia&#xe7;&#xe3;o"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btPotenciaActionPerformed"/>

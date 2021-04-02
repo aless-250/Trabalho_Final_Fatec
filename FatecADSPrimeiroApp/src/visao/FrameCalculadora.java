@@ -72,6 +72,7 @@ public class FrameCalculadora extends javax.swing.JFrame {
         jLabel2Numero.setText("2° Numero:.");
 
         tfNum1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfNum1.setToolTipText("Digite aqui o 1° numero da operação.");
         tfNum1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfNum1ActionPerformed(evt);
@@ -79,10 +80,12 @@ public class FrameCalculadora extends javax.swing.JFrame {
         });
 
         tfNum2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfNum2.setToolTipText("Digite aqui o 2° numero da operação.");
 
         tfResultado.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         tfResultado.setForeground(new java.awt.Color(255, 0, 0));
         tfResultado.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfResultado.setToolTipText("Veja aqui o  Resultado da operação");
 
         javax.swing.GroupLayout jpCalculadoraLayout = new javax.swing.GroupLayout(jpCalculadora);
         jpCalculadora.setLayout(jpCalculadoraLayout);
@@ -130,6 +133,7 @@ public class FrameCalculadora extends javax.swing.JFrame {
         });
 
         btSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/sair.png"))); // NOI18N
+        btSair.setToolTipText("Use para Sair da aplicação calculadora.");
         btSair.setBorder(null);
         btSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,7 +142,7 @@ public class FrameCalculadora extends javax.swing.JFrame {
         });
 
         btSubtrair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/subtracao.png"))); // NOI18N
-        btSubtrair.setToolTipText("Clique aqui para realizar operação de Adição");
+        btSubtrair.setToolTipText("Clique aqui para realizar operação de Subtração");
         btSubtrair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btSubtrairActionPerformed(evt);
@@ -146,7 +150,7 @@ public class FrameCalculadora extends javax.swing.JFrame {
         });
 
         btMultiplicar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/multiplicacao.png"))); // NOI18N
-        btMultiplicar.setToolTipText("Clique aqui para realizar operação de Adição");
+        btMultiplicar.setToolTipText("Clique aqui para realizar operação de Multiplicação");
         btMultiplicar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btMultiplicarActionPerformed(evt);
@@ -154,7 +158,7 @@ public class FrameCalculadora extends javax.swing.JFrame {
         });
 
         btDividir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/divisao.png"))); // NOI18N
-        btDividir.setToolTipText("Clique aqui para realizar operação de Adição");
+        btDividir.setToolTipText("Clique aqui para realizar operação de Divisão");
         btDividir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btDividirActionPerformed(evt);
@@ -162,6 +166,7 @@ public class FrameCalculadora extends javax.swing.JFrame {
         });
 
         btLimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/limpar.png"))); // NOI18N
+        btLimpar.setToolTipText("Use para Limpar os campos");
         btLimpar.setBorder(null);
         btLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,6 +175,7 @@ public class FrameCalculadora extends javax.swing.JFrame {
         });
 
         btPotencia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/potencia.png"))); // NOI18N
+        btPotencia.setToolTipText("Clique aqui para realizar operação de exponenciação");
         btPotencia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btPotenciaActionPerformed(evt);

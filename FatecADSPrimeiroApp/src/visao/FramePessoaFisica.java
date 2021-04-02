@@ -30,11 +30,9 @@ import javax.swing.JOptionPane;
  */
 
 public class FramePessoaFisica extends javax.swing.JFrame {
-
 //Cria um objeto do tipo Cliente sem nenhum dado atribuido / Uso do contrutor vazio
 Cliente cliente = new Cliente();    
-SimpleDateFormat formato = new SilmpleDateFormat("DD/MM/YYYY"); //Cria um objeto formatador para a Data de Nascimento
-
+SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); //Cria um objeto formatador para a Data de Nascimento
 
     public FramePessoaFisica() {
         initComponents();
@@ -88,7 +86,7 @@ SimpleDateFormat formato = new SilmpleDateFormat("DD/MM/YYYY"); //Cria um objeto
         jbTituloCad = new javax.swing.JLabel();
         jPanelBotoes = new javax.swing.JPanel();
         btSalvar = new javax.swing.JButton();
-        btCancelar = new javax.swing.JButton();
+        btConsultar = new javax.swing.JButton();
         btEditar = new javax.swing.JButton();
         btExcluir = new javax.swing.JButton();
         btSair = new javax.swing.JButton();
@@ -102,16 +100,18 @@ SimpleDateFormat formato = new SilmpleDateFormat("DD/MM/YYYY"); //Cria um objeto
         getContentPane().setLayout(null);
 
         jPanelCadastroFisica.setBackground(new java.awt.Color(222, 222, 210));
-        jPanelCadastroFisica.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dados do Cliente", 2, 0));
+        jPanelCadastroFisica.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dados do Cliente", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
 
         lbEnderecoCad.setText("Endereço:.");
 
+        txNomeCad.setToolTipText("Digite aqui o nome completo");
         txNomeCad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txNomeCadActionPerformed(evt);
             }
         });
 
+        txNomeEnderecoCad.setToolTipText("Digite aqui o endereço.");
         txNomeEnderecoCad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txNomeEnderecoCadActionPerformed(evt);
@@ -124,6 +124,7 @@ SimpleDateFormat formato = new SilmpleDateFormat("DD/MM/YYYY"); //Cria um objeto
 
         lbSexoCad.setText("   Sexo:.");
 
+        txNomeCidadeCad.setToolTipText("Digite aqui a cidade, se preferir digite (Bairro / Cidade).");
         txNomeCidadeCad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txNomeCidadeCadActionPerformed(evt);
@@ -133,6 +134,7 @@ SimpleDateFormat formato = new SilmpleDateFormat("DD/MM/YYYY"); //Cria um objeto
         lbEstadoCad.setText("Estado:.");
 
         cbEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "AC - Acre", "AL - Alagoas", "AP - Amapá", "AM - Amazonas", "BA - Bahia ", "CE - Ceará", "DF - Distrito Federal", "ES - Espírito Santo", "GO - Goiás", "MA - Maranhão", "MT - Mato Grosso", "MS - Mato Grosso do Sul", "MG - Minas Gerais", "PA - Pará", "PB - Paraíba", "PR - Paraná", "PE - Pernambuco", "PI - Piauí", "RR - Roraima", "RO - Rondônia", "RJ - Rio de Janeiro", "RN - Rio Grande do Norte", "RS - Rio Grande do Sul", "SC - Santa Catarina", "SP - São Paulo", "SE - Sergipe", "TO - Tocantins" }));
+        cbEstado.setToolTipText("Selecione o Estado.");
 
         lbCidadeCad.setText("Cidade:.");
 
@@ -149,6 +151,7 @@ SimpleDateFormat formato = new SilmpleDateFormat("DD/MM/YYYY"); //Cria um objeto
 
         jLabelNumero.setText("Numero:.");
 
+        txNomeNumeroCad.setToolTipText("Digite aqui o Numero do endereço.");
         txNomeNumeroCad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txNomeNumeroCadActionPerformed(evt);
@@ -160,6 +163,7 @@ SimpleDateFormat formato = new SilmpleDateFormat("DD/MM/YYYY"); //Cria um objeto
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jFormattedTextFieldDtNascimento.setToolTipText("Digite aqui a Data de Nascimento sem uso dos caracteres especiais.");
 
         jLabelCPF.setText("CPF:.");
 
@@ -168,8 +172,11 @@ SimpleDateFormat formato = new SilmpleDateFormat("DD/MM/YYYY"); //Cria um objeto
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jFormattedTextFieldCPF.setToolTipText("Digite aqui o numero do CPF sem os pontos.");
 
         jlRenda.setText("Renda:");
+
+        jtRenda.setToolTipText("Digite aqui o rendimento mensal (ex. Salário).");
 
         javax.swing.GroupLayout jPanelCadastroFisicaLayout = new javax.swing.GroupLayout(jPanelCadastroFisica);
         jPanelCadastroFisica.setLayout(jPanelCadastroFisicaLayout);
@@ -278,7 +285,7 @@ SimpleDateFormat formato = new SilmpleDateFormat("DD/MM/YYYY"); //Cria um objeto
         jPanelCadastroFisica.setBounds(0, 40, 830, 200);
 
         jPanelCadastro2.setBackground(new java.awt.Color(222, 222, 210));
-        jPanelCadastro2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Hobbies do Cliente", 2, 0));
+        jPanelCadastro2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Hobbies do Cliente", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
 
         jCheckBoxLeitura.setText("Leitura");
 
@@ -306,7 +313,7 @@ SimpleDateFormat formato = new SilmpleDateFormat("DD/MM/YYYY"); //Cria um objeto
                     .addComponent(jCheckBoxLeitura)
                     .addComponent(jCheckBoxGames))
                 .addGap(163, 163, 163)
-                .addGroup(jPanelCadastro2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanelCadastro2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jCheckBoxFutebol)
                     .addComponent(jCheckBoxCorrer))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
@@ -349,20 +356,23 @@ SimpleDateFormat formato = new SilmpleDateFormat("DD/MM/YYYY"); //Cria um objeto
         jPanelBotoes.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         btSalvar.setText("Salvar");
+        btSalvar.setToolTipText("Use para Salvar os dados digitado.");
         btSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btSalvarActionPerformed(evt);
             }
         });
 
-        btCancelar.setText("Cancelar");
-        btCancelar.addActionListener(new java.awt.event.ActionListener() {
+        btConsultar.setText("Consultar");
+        btConsultar.setToolTipText("Use para Consultar o dado em memoria.");
+        btConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCancelarActionPerformed(evt);
+                btConsultarActionPerformed(evt);
             }
         });
 
         btEditar.setText("Editar");
+        btEditar.setToolTipText("Use para Editar o dado em memoria.");
         btEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btEditarActionPerformed(evt);
@@ -370,6 +380,7 @@ SimpleDateFormat formato = new SilmpleDateFormat("DD/MM/YYYY"); //Cria um objeto
         });
 
         btExcluir.setText("Excluir");
+        btExcluir.setToolTipText("Use para Excluir o dado em memoria.");
         btExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btExcluirActionPerformed(evt);
@@ -377,6 +388,7 @@ SimpleDateFormat formato = new SilmpleDateFormat("DD/MM/YYYY"); //Cria um objeto
         });
 
         btSair.setText("Voltar");
+        btSair.setToolTipText("Use para Voltar a tela principal.");
         btSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btSairActionPerformed(evt);
@@ -390,13 +402,13 @@ SimpleDateFormat formato = new SilmpleDateFormat("DD/MM/YYYY"); //Cria um objeto
             .addGroup(jPanelBotoesLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(btSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
+                .addComponent(btConsultar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btCancelar)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 332, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 346, Short.MAX_VALUE)
                 .addComponent(btSair, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -405,7 +417,7 @@ SimpleDateFormat formato = new SilmpleDateFormat("DD/MM/YYYY"); //Cria um objeto
             .addGroup(jPanelBotoesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btCancelar)
+                    .addComponent(btConsultar)
                     .addComponent(btExcluir)
                     .addComponent(btEditar)
                     .addComponent(btSalvar)
@@ -429,9 +441,11 @@ SimpleDateFormat formato = new SilmpleDateFormat("DD/MM/YYYY"); //Cria um objeto
         cliente.setNome(txNomeCad.getText());
     try {
         cliente.setNascimento(formato.parse(jFormattedTextFieldDtNascimento.getText()));
-    } catch (ParseException ex) {
-        Logger.getLogger(FramePessoaFisica.class.getName()).log(Level.SEVERE, null, ex);
-    }   cliente.setEndereço(txNomeEnderecoCad.getText());
+        } 
+        catch (ParseException ex) {
+            Logger.getLogger(FramePessoaFisica.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        cliente.setEndereço(txNomeEnderecoCad.getText());
         cliente.setNumeroEndereço(Integer.parseInt(txNomeNumeroCad.getText())); //Use o Parse para fazer a conversão para Inteiro
         cliente.setCidade(txNomeCidadeCad.getText());
         cliente.setUf((String) cbEstado.getSelectedItem()); //Pega o item selecionado da Combo Box
@@ -448,6 +462,9 @@ SimpleDateFormat formato = new SilmpleDateFormat("DD/MM/YYYY"); //Cria um objeto
         cliente.setCozinhar(jCheckBoxCozinhar.isSelected());
         
         JOptionPane.showMessageDialog(null, "Dados inseridos com sucesso no objeto que está sendo instanciado na memória.");
+        
+        limparCampos();//Metodo para limpar todos os campos do frame
+        
     }//GEN-LAST:event_btSalvarActionPerformed
 
     private void txNomeCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txNomeCadActionPerformed
@@ -470,24 +487,119 @@ SimpleDateFormat formato = new SilmpleDateFormat("DD/MM/YYYY"); //Cria um objeto
         // TODO add your handling code here:
     }//GEN-LAST:event_txNomeNumeroCadActionPerformed
 
-    private void btCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btCancelarActionPerformed
+    private void btConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarActionPerformed
+        // Metodo para recuperar o dado em memoria
+        txNomeCad.setText(cliente.getNome());
+        txNomeCad.setEnabled(false);//Trava o campo - Não Editavel
+        
+        jFormattedTextFieldDtNascimento.setText(formato.format(cliente.getNascimento()));
+        jFormattedTextFieldDtNascimento.setEnabled(false);//Trava o campo - Não Editavel
+        
+        txNomeEnderecoCad.setText(cliente.getEndereço());
+        txNomeEnderecoCad.setEnabled(false);//Trava o campo - Não Editavel
+        
+        txNomeNumeroCad.setText(String.valueOf(cliente.getNumeroEndereço()));
+        txNomeNumeroCad.setEnabled(false);//Trava o campo - Não Editavel
+                
+        txNomeCidadeCad.setText(cliente.getCidade());
+        txNomeCidadeCad.setEnabled(false);//Trava o campo - Não Editavel
+                
+        cbEstado.setSelectedItem(cliente.getUf());
+        cbEstado.setEnabled(false);//Trava o campo - Não Editavel
+                
+        jFormattedTextFieldCPF.setText(cliente.getCpf());
+        jFormattedTextFieldCPF.setEnabled(false);//Trava o campo - Não Editavel
+                
+        jRadioButtonMasculinoCad.setSelected("Masculino".equals(cliente.getSexo()));
+        jRadioButtonMasculinoCad.setEnabled(false);//Trava o campo - Não Editavel
+                
+        jRadioButtonFemininoCad.setSelected("Feminino".equals(cliente.getSexo()));
+        jRadioButtonFemininoCad.setEnabled(false);//Trava o campo - Não Editavel
+                
+        jtRenda.setText(String.valueOf(cliente.getRenda()));
+        jtRenda.setEnabled(false);//Trava o campo - Não Editavel
+                
+        jCheckBoxLeitura.setSelected(cliente.isLeitura());
+        jCheckBoxLeitura.setEnabled(false);//Trava o campo - Não Editavel
+                
+        jCheckBoxFutebol.setSelected(cliente.isFutebol());
+        jCheckBoxFutebol.setEnabled(false);//Trava o campo - Não Editavel
+                
+        jCheckBoxPescaria.setSelected(cliente.isPescaria());
+        jCheckBoxPescaria.setEnabled(false);//Trava o campo - Não Editavel
+                
+        jCheckBoxDanca.setSelected(cliente.isDanca());
+        jCheckBoxDanca.setEnabled(false);//Trava o campo - Não Editavel
+                
+        jCheckBoxMusica.setSelected(cliente.isMusica());
+        jCheckBoxMusica.setEnabled(false);//Trava o campo - Não Editavel
+                
+        jCheckBoxGames.setSelected(cliente.isVedeogame());
+        jCheckBoxGames.setEnabled(false);//Trava o campo - Não Editavel
+                
+        jCheckBoxCorrer.setSelected(cliente.isCorrida());
+        jCheckBoxCorrer.setEnabled(false);//Trava o campo - Não Editavel
+                
+        jCheckBoxCozinhar.setSelected(cliente.isCozinhar());
+        jCheckBoxCozinhar.setEnabled(false);//Trava o campo - Não Editavel              
+    }//GEN-LAST:event_btConsultarActionPerformed
 
     private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
-        // TODO add your handling code here:
+        // Habilita a Edição dos campos
+        txNomeCad.setEnabled(true);
+        jFormattedTextFieldDtNascimento.setEnabled(true);
+        txNomeEnderecoCad.setEnabled(true);
+        txNomeNumeroCad.setEnabled(true);
+        txNomeCidadeCad.setEnabled(true);
+        cbEstado.setEnabled(true);
+        jFormattedTextFieldCPF.setEnabled(true);
+        jRadioButtonMasculinoCad.setEnabled(true);
+        jRadioButtonFemininoCad.setEnabled(true);
+        jtRenda.setEnabled(true);
+        jCheckBoxLeitura.setEnabled(true);
+        jCheckBoxFutebol.setEnabled(true);
+        jCheckBoxPescaria.setEnabled(true);
+        jCheckBoxDanca.setEnabled(true);
+        jCheckBoxMusica.setEnabled(true);
+        jCheckBoxGames.setEnabled(true);
+        jCheckBoxCorrer.setEnabled(true);
+        jCheckBoxCozinhar.setEnabled(true);        
     }//GEN-LAST:event_btEditarActionPerformed
 
     private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
-        // TODO add your handling code here:
+        // Exclui o objeto da memoria
+        JOptionPane.showMessageDialog(null, "Deseja excluir esse cliente da memoria? ", "Exclusão do cliente", -1);
+        limparCampos();
+        cliente = null; //apaga o cliente da memoria
+        JOptionPane.showMessageDialog(null,"Cliente excluido com sucesso!!!.");         
     }//GEN-LAST:event_btExcluirActionPerformed
 
     private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
         // TODO add your handling code here:
-       this.dispose();
-        
+       this.dispose();        
     }//GEN-LAST:event_btSairActionPerformed
 
+    //Metodo para limpar campos do frame
+    public void limparCampos(){
+        txNomeCad.setText("");
+        jFormattedTextFieldDtNascimento.setText("");
+        txNomeEnderecoCad.setText("");
+        txNomeNumeroCad.setText("");
+        txNomeCidadeCad.setText("");
+        cbEstado.setSelectedIndex(0);
+        jFormattedTextFieldCPF.setText("");
+        buttonGroupoSexo.clearSelection();
+        jtRenda.setText("");
+        jCheckBoxLeitura.setSelected(false);
+        jCheckBoxFutebol.setSelected(false);
+        jCheckBoxPescaria.setSelected(false);
+        jCheckBoxDanca.setSelected(false);
+        jCheckBoxMusica.setSelected(false);
+        jCheckBoxGames.setSelected(false);
+        jCheckBoxCorrer.setSelected(false);
+        jCheckBoxCozinhar.setSelected(false);
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -515,134 +627,9 @@ SimpleDateFormat formato = new SilmpleDateFormat("DD/MM/YYYY"); //Cria um objeto
         }
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
+        
         /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FramePessoaFisica().setVisible(true);
@@ -651,7 +638,7 @@ SimpleDateFormat formato = new SilmpleDateFormat("DD/MM/YYYY"); //Cria um objeto
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btCancelar;
+    private javax.swing.JButton btConsultar;
     private javax.swing.JButton btEditar;
     private javax.swing.JButton btExcluir;
     private javax.swing.JButton btSair;
@@ -691,4 +678,5 @@ SimpleDateFormat formato = new SilmpleDateFormat("DD/MM/YYYY"); //Cria um objeto
     private javax.swing.JTextField txNomeEnderecoCad;
     private javax.swing.JTextField txNomeNumeroCad;
     // End of variables declaration//GEN-END:variables
+
 }
