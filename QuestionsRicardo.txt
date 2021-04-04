@@ -37,5 +37,33 @@ R
 Na visão geral esse sw atende suas necessidades?
 R
 
+
 Sobre Licenças vc tem alguma que queira ou não usar?
 R
+
+Anotações
+entender regra de ativo fixo
+entender valores, depreciação
+
+garantia é importante, dizer se está na garantia  ou não
+dizer onde ou quem é o fornecedor
+
+Pesquisar conferencia cega
+
+um qrcode para os clentes do negocio
+MRPverificar sobre LGPD
+
+prazo até junho
+
+
+
+Fazer um cronograma de entrega
+dividi o software em mini rpojetos
+
+X dias para llevantar informação
+X dias para começar fazer banco de dados
+fazer somente o que a gente planejou
+
+Fazer os diagramas
+
+
