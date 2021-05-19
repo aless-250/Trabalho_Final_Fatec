@@ -1,0 +1,61 @@
+Titulo do Sistema: Count++ Iventory - Previsão de entrega 07/2022 
+
+Banco de Dados.
+
+Criar 3 bases - Programação / homologação / produção.
+
+Banco MySQL
+Name: BDSITEMA
+User: root
+Pass: Fatec2021
+
+jdbc:mysql://localhost:3306/?user=root
+Driver:	      mysql-connector-java-5.1.47.jar
+
+TABLE:
+	tb_usuario --> SEM RELACIONAMENTOS, id int auto_increment primary key.
+
+
+Para todos os cadastros usar modelo CRUD.
+	
+	Criar
+	Alterar
+	Apagar
+	Listar
+ 
+Etapas (Importantissimo no desenvolvimento de aplicação):
+
+	NBS - 	Nucleo Basico do Sistema
+	Login - Permissionamento
+	Log - 	Log de ações (ações e tempo de uso)
+	Backup - Rotina de Backup
+
+Formas Normais (select * from permissao)
+
+	1FN - redundancia
+	2FN - met Index - Atributos
+	3FN - Relacionamento - (N - N), cria-se uma nova tabela
+
+Padrão de Telas
+
+Tamanho Ico Menu 
+Posição Form  	[250, 75]	
+Tamanho Form 	[1090, 611]
+Backcolor 	[60,63,65]
+Font Titulo  	Cabin Sketch 36
+Cor das Letras	[255,255,255]
+Cor dos Botões	[153,153,153]
+Cor das Letras dos Botões [51,51,51]
+Demais Titulos Font padrão
+
+Usar nomeclatura em Ing
+nome variavel sem o j iniciais min
+
+Mensagem dos campos: Digite aqui o seu usuário para acessar o sistema.
+
+--->Icones
+
+	https://www.iconfinder.com/
+	https://www.flaticon.com/br/
+	https://www.freeicons.io/
+
