@@ -1,0 +1,1 @@
+drop database db_Biblioteca;
