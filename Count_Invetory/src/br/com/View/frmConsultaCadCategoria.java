@@ -5,9 +5,15 @@
  */
 package br.com.View;
 
-/**
- *
- * @author aaa
+/**--------------------------------------------------------------------------
+ * Sistema Guaxinim                                                         |
+ * Descrição: Trabalho TG                                                   |
+ * Sistema de inventario feito como conclusão do curso de ADS               |
+ * na Fatec de Santana de Parnaiba.                                         |
+ * @author Alessandro de Sousa da Silva                                     |
+ * @author Davi de Souza Silva                                              |
+ * Data: 08/03/2020                                                         |
+/----------------------------------------------------------------------------
  */
 public class frmConsultaCadCategoria extends javax.swing.JFrame {
 

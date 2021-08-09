@@ -29,6 +29,7 @@ import javax.swing.Timer;
  * -------------------------------------------------------------------------|
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
  * @author Alessandro de Sousa da Silva                                     |
+ * @author Davi de Souza Silva                                              |
  * Data: 08/03/2020                                                         |
  * Descrição: Desenvolvimento da tela principal e a comunicação com BD      |
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|

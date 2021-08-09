@@ -15,7 +15,8 @@ import java.net.URL;
  * Descrição: Trabalho TG                                                   |
  * Sistema de inventario feito como conclusão do curso de ADS               |
  * na Fatec de Santana de Parnaiba.                                         |
- * @author Alessandro de Sousa da Silva                                     |
+ * @author Alessandro de Sousa da Silva  
+ * @author Davi de Souza Silva|
  * Data: 08/03/2020                                                         |
 /----------------------------------------------------------------------------
  */
@@ -316,6 +317,11 @@ public class frmCadFornecedor extends javax.swing.JFrame {
         jButtonNovoCadFornecedor.setText("Novo");
         jButtonNovoCadFornecedor.setMaximumSize(new java.awt.Dimension(82, 26));
         jButtonNovoCadFornecedor.setMinimumSize(new java.awt.Dimension(82, 26));
+        jButtonNovoCadFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNovoCadFornecedorActionPerformed(evt);
+            }
+        });
 
         jButtonAlterarCadFornecedor.setText("Alterar");
         jButtonAlterarCadFornecedor.setMaximumSize(new java.awt.Dimension(82, 26));
@@ -445,6 +451,10 @@ public class frmCadFornecedor extends javax.swing.JFrame {
     private void jTextFieldNomeFantasiaCadFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeFantasiaCadFornecedorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldNomeFantasiaCadFornecedorActionPerformed
+
+    private void jButtonNovoCadFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoCadFornecedorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonNovoCadFornecedorActionPerformed
 
     /**
      * @param args the command line arguments

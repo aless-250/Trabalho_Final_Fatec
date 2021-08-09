@@ -25,7 +25,8 @@ import javax.swing.UnsupportedLookAndFeelException;
  * Nome do Frame: frmLogin (Tela de Login com comunicação ao BD MySQL).     |
  * -------------------------------------------------------------------------|
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
- * @author Alessandro de Sousa da Silva                                     |
+ * @author Alessandro de Sousa da Silva                                     |  
+ * @author Davi de Souza Silva                                              |
  * Data: 08/03/2020                                                         |
  * Descrição: Desenvolvimento da tela de Login com a validação com o BD.    |
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|
