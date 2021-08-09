@@ -394,8 +394,7 @@ public class frmLocationScreen extends javax.swing.JFrame {
 
     private void btPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPesquisaActionPerformed
         // TODO add your handling code here:
-        frmConsultaCadCategoria ConsultaCadCategoria = new frmConsultaCadCategoria();
-        ConsultaCadCategoria.setVisible(true);
+      
     }//GEN-LAST:event_btPesquisaActionPerformed
 
     private void txtPosicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPosicaoActionPerformed

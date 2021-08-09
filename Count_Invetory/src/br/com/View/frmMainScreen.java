@@ -491,8 +491,6 @@ public class frmMainScreen extends javax.swing.JFrame {
     private void jMenuItemNivelAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemNivelAcessoActionPerformed
         // TODO add your handling code here:
         // Chamando tela frmTelaNiveldeAcesso
-        frmTelaNiveldeAcesso NiveldeAcesso = new frmTelaNiveldeAcesso();
-        NiveldeAcesso.setVisible(true);
     }//GEN-LAST:event_jMenuItemNivelAcessoActionPerformed
 
     private void jMenuItemFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFornecedorActionPerformed
@@ -556,7 +554,7 @@ public class frmMainScreen extends javax.swing.JFrame {
         }//fim do if TelaTiposdeProduto
         
          if(menu.equals("Localizações")){
-            frmCadEnderecos CadEnderecos = new frmCadEnderecos();
+            frmLocationScreen CadEnderecos = new frmLocationScreen();
             CadEnderecos.setVisible(true);
         }//fim do if CadEnderecos
         
@@ -571,8 +569,7 @@ public class frmMainScreen extends javax.swing.JFrame {
         }//fim do if CadFornecedor
         
         if(menu.equals("Niveis de Acessos")){
-            frmTelaNiveldeAcesso CadTelaNiveldeAcesso = new frmTelaNiveldeAcesso();
-            CadTelaNiveldeAcesso.setVisible(true);
+           
         }//fim do if TelaNiveldeAcesso
         
         if(menu.equals("Usuário")){

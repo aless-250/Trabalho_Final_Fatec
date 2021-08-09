@@ -102,9 +102,10 @@ public class frmCadProduto extends javax.swing.JFrame {
         jLabel3.setBounds(20, 390, 100, 20);
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel4.setText("Endereço:");
+        jLabel4.setText("Localização");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(20, 310, 81, 17);
+        jLabel4.setBounds(20, 310, 91, 17);
+        jLabel4.getAccessibleContext().setAccessibleName("Localização:");
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel6.setText("Tipo do Produto:");

@@ -89,7 +89,6 @@ public class frmCadCategoria extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jPanelGeral.setBackground(new java.awt.Color(222, 223, 233));
         jPanelGeral.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanelGeral.setLayout(null);
 
@@ -349,7 +348,7 @@ public class frmCadCategoria extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(100, 240, 0, 0);
+        jPanel1.setBounds(100, 240, 100, 100);
 
         jFormattedTextField1.setText("jFormattedTextField1");
         getContentPane().add(jFormattedTextField1);
@@ -388,8 +387,7 @@ public class frmCadCategoria extends javax.swing.JFrame {
 
     private void jButtonLupaCadCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLupaCadCategoriaActionPerformed
         // TODO add your handling code here:
-        frmConsultaCadCategoria ConsultaCadCategoria = new frmConsultaCadCategoria();
-        ConsultaCadCategoria.setVisible(true);
+       
     }//GEN-LAST:event_jButtonLupaCadCategoriaActionPerformed
 
     private void jButtonSairCadCategoria1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairCadCategoria1ActionPerformed
