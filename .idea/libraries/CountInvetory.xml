@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="CountInvetory">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Count_Invetory/dist/CountInvetory.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
