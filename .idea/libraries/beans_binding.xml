@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="beans-binding">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Count_Invetory/lib/beans-binding/beansbinding-1.2.1-doc.zip!/" />
+      <root url="jar://$PROJECT_DIR$/Count_Invetory/lib/beans-binding/beansbinding-1.2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

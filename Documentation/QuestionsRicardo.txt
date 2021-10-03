@@ -1,0 +1,69 @@
+Perguntas:
+
+Podemos deixar esse Repositório público? (para estudos e futuros alunos poderem consultar)
+R:
+
+Como é feito o inventário hoje,existe algum programa? E qual a sua expectativa sobre o count++ inventory?
+R:
+
+Quem e o responsável pelo inventário? como é feito esse controle?
+R:
+
+O que você precisa no sistema de inventário?
+R:
+
+O que você precisa nos relatórios de inventário? (quais informações 
+você precisa filtrar?)
+R:
+
+O que vai ser iventáriado?(ex: só patrimonios ou patrimos e insumos?)
+R:
+
+De quanto em quanto tempo você pretende fazer esse iventário?
+R:
+
+Quais os niveis de acesso você acha que deveria ter esse sistema?
+R:
+
+Vc pretende mapear a sala por posição dos itens ou apenas por localidade?
+R
+
+Pretende utilizar o sw para também fazer controle de garantia e envido de patrimônio para manutenção?
+R.
+
+O que acontece com o item depois de depreciado?
+R
+
+Na visão geral esse sw atende suas necessidades?
+R
+
+
+Sobre Licenças vc tem alguma que queira ou não usar?
+R
+
+Anotações
+entender regra de ativo fixo
+entender valores, depreciação
+
+garantia é importante, dizer se está na garantia  ou não
+dizer onde ou quem é o fornecedor
+
+Pesquisar conferencia cega
+
+um qrcode para os clentes do negocio
+MRPverificar sobre LGPD
+
+prazo até junho
+
+
+
+Fazer um cronograma de entrega
+dividi o software em mini rpojetos
+
+X dias para llevantar informação
+X dias para começar fazer banco de dados
+fazer somente o que a gente planejou
+
+Fazer os diagramas
+
+
