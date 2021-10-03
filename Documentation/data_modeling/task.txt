@@ -1,0 +1,10 @@
+Create MER - Modelo-Entidade-Relacionamento 
+Create DER - Diagrama-Entidade-Relacionamento 
+
+create MCD - Modelo Conceitual de Dados
+create MLD - Modelo lógico de Dados
+create MFD - Modelo Físico de Dados
+Create Data Dictonary
+
+Create Normalização
+
