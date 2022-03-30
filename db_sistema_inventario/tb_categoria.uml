@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>1a6c2a9e-b3e6-4bf0-80b0-b970781750d4.TABLE:db_sistema_inventario.tb_categoria</OriginalElement>
+  <nodes>
+    <node x="926.0" y="215.0">1a6c2a9e-b3e6-4bf0-80b0-b970781750d4.TABLE:db_sistema_inventario.tb_usuario</node>
+    <node x="356.0" y="0.0">1a6c2a9e-b3e6-4bf0-80b0-b970781750d4.TABLE:db_sistema_inventario.tb_fornecedor</node>
+    <node x="260.0" y="457.0">1a6c2a9e-b3e6-4bf0-80b0-b970781750d4.TABLE:db_sistema_inventario.tb_produto</node>
+    <node x="196.0" y="154.0">1a6c2a9e-b3e6-4bf0-80b0-b970781750d4.TABLE:db_sistema_inventario.tb_tipo</node>
+    <node x="594.0" y="88.0">1a6c2a9e-b3e6-4bf0-80b0-b970781750d4.TABLE:db_sistema_inventario.tb_endereco</node>
+    <node x="842.0" y="22.0">1a6c2a9e-b3e6-4bf0-80b0-b970781750d4.TABLE:db_sistema_inventario.tb_nv_acesso</node>
+    <node x="1016.0" y="0.0">1a6c2a9e-b3e6-4bf0-80b0-b970781750d4.TABLE:db_sistema_inventario.tb_senha</node>
+    <node x="0.0" y="143.0">1a6c2a9e-b3e6-4bf0-80b0-b970781750d4.TABLE:db_sistema_inventario.tb_categoria</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="1a6c2a9e-b3e6-4bf0-80b0-b970781750d4.TABLE:db_sistema_inventario.tb_produto" target="1a6c2a9e-b3e6-4bf0-80b0-b970781750d4.TABLE:db_sistema_inventario.tb_endereco" relationship="REFERENCES">
+      <point x="79.125" y="-225.5" />
+      <point x="444.625" y="437.0" />
+      <point x="695.5" y="437.0" />
+      <point x="0.0" y="115.5" />
+    </edge>
+    <edge source="1a6c2a9e-b3e6-4bf0-80b0-b970781750d4.TABLE:db_sistema_inventario.tb_usuario" target="1a6c2a9e-b3e6-4bf0-80b0-b970781750d4.TABLE:db_sistema_inventario.tb_senha" relationship="REFERENCES">
+      <point x="42.75" y="-247.5" />
+      <point x="1054.25" y="190.0" />
+      <point x="1104.0" y="190.0" />
+      <point x="0.0" y="82.5" />
+    </edge>
+    <edge source="1a6c2a9e-b3e6-4bf0-80b0-b970781750d4.TABLE:db_sistema_inventario.tb_produto" target="1a6c2a9e-b3e6-4bf0-80b0-b970781750d4.TABLE:db_sistema_inventario.tb_fornecedor" relationship="REFERENCES">
+      <point x="26.375" y="-225.5" />
+      <point x="391.875" y="427.0" />
+      <point x="465.0" y="427.0" />
+      <point x="0.0" y="203.5" />
+    </edge>
+    <edge source="1a6c2a9e-b3e6-4bf0-80b0-b970781750d4.TABLE:db_sistema_inventario.tb_produto" target="1a6c2a9e-b3e6-4bf0-80b0-b970781750d4.TABLE:db_sistema_inventario.tb_tipo" relationship="REFERENCES">
+      <point x="-26.375" y="-225.5" />
+      <point x="339.125" y="427.0" />
+      <point x="266.0" y="427.0" />
+      <point x="0.0" y="49.5" />
+    </edge>
+    <edge source="1a6c2a9e-b3e6-4bf0-80b0-b970781750d4.TABLE:db_sistema_inventario.tb_usuario" target="1a6c2a9e-b3e6-4bf0-80b0-b970781750d4.TABLE:db_sistema_inventario.tb_nv_acesso" relationship="REFERENCES">
+      <point x="-42.75" y="-247.5" />
+      <point x="968.75" y="190.0" />
+      <point x="919.0" y="190.0" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="1a6c2a9e-b3e6-4bf0-80b0-b970781750d4.TABLE:db_sistema_inventario.tb_produto" target="1a6c2a9e-b3e6-4bf0-80b0-b970781750d4.TABLE:db_sistema_inventario.tb_categoria" relationship="REFERENCES">
+      <point x="-79.125" y="-225.5" />
+      <point x="286.375" y="437.0" />
+      <point x="88.0" y="437.0" />
+      <point x="0.0" y="60.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.5786637931034483" showDependencies="false" x="596.0" y="454.0" />
+  <SelectedNodes>
+    <node>1a6c2a9e-b3e6-4bf0-80b0-b970781750d4.TABLE:db_sistema_inventario.tb_categoria</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Comments</Category>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+

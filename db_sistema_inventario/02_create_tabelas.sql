@@ -121,3 +121,10 @@ CREATE TABLE IF NOT EXISTS TB_FORNECEDOR(
     st_ativo boolean NOT NULL default true,
     PRIMARY KEY (id_fornecedor)
 );
+
+##CREATE TB_INVENTARIO
+CREATE TABLE TB_INVENTARIO(
+    id_inventario int (11) not null,
+    dt_inventario datetime,
+    primary key (id_inventario)
+)
