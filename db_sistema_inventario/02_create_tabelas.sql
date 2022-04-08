@@ -25,7 +25,7 @@ create table if not exists TB_USUARIO(
     ds_usuario varchar(255) NOT NULL,
     ds_cargo varchar(50) NOT NULL,
     ds_setor varchar(50) NOT NULL,
-    nr_registro varchar(35) default id_usuario,
+    nr_registro varchar(35) default id_usuario, ##numero de registro do usuario
     nr_rg varchar(10) NOT NULL,
     nr_cpf varchar(11) NOT NULL,
     ##ctps
