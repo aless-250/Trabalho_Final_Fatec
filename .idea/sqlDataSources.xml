@@ -22,23 +22,4 @@
       </scope>
     </mapping>
   </component>
-  <component name="SqlDataSourceStorage">
-    <option name="dataSources">
-      <list>
-        <State>
-          <option name="id" value="c6f608ee-766d-4fe4-99f1-68dd9631849b" />
-          <option name="name" value="@localhost (DDL)" />
-          <option name="languageId" value="MySQL" />
-          <option name="urls">
-            <array>
-              <option value="file://$PROJECT_DIR$/db_sistema_inventario/01_create_sistema_inventario.sql" />
-              <option value="file://$PROJECT_DIR$/db_sistema_inventario/02_create_tabelas.sql" />
-              <option value="file://$PROJECT_DIR$/db_sistema_inventario/03_create_foreign_keys.sql" />
-              <option value="file://$PROJECT_DIR$/db_sistema_inventario/04_inserts.sql" />
-            </array>
-          </option>
-        </State>
-      </list>
-    </option>
-  </component>
 </project>

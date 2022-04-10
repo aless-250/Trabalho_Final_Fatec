@@ -1,4 +1,4 @@
-use db_sistema_inventario;
+use sistema_inventario;
 
 ##TB_NV_ACESSO NA TB_USUARIO
 ALTER TABLE TB_USUARIO ADD COLUMN id_acesso INT;
