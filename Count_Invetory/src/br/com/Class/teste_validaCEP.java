@@ -16,13 +16,10 @@ public class teste_validaCEP {
             //variavel url
             String result = client.send(HttpRequest.newBuilder().GET().uri(URI.create(url)).build(), HttpResponse.BodyHandlers.ofString()).body();
             System.out.println(result);
-
-            System.out.println("Cliente " + client);
-            System.out.println("cliente conectado");
         } catch (Exception e) {
             System.out.println("Erro: " + e.getMessage());
         }
-    }
-
+cad_validaEnderecoUsuario cad_validaEnderecoUsuario = new cad_validaEnderecoUsuario();
+        System.out.println(cad_validaEnderecoUsuario.validaCEP(cep));
 }
-
+}
