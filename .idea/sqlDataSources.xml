@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="2163a3cc-3dca-46e8-bba0-46a1635e4231" name="@localhost ddlCountInventory">
+      <data-sources db="1a6c2a9e-b3e6-4bf0-80b0-b970781750d4" ddl="c6f608ee-766d-4fe4-99f1-68dd9631849b" />
+      <scope>
+        <node negative="1">
+          <node kind="database" negative="1">
+            <node kind="schema" negative="1" />
+          </node>
+          <node kind="schema">
+            <name qname="count_inventory" />
+            <name qname="db_sistema_inventario" />
+            <name qname="information_schema" />
+            <name qname="mysql" />
+            <name qname="performance_schema" />
+            <name qname="seguranca" />
+            <name qname="sys" />
+            <name qname="usuario" />
+          </node>
+        </node>
+      </scope>
+    </mapping>
+  </component>
+  <component name="SqlDataSourceStorage">
+    <option name="dataSources">
+      <list>
+        <State>
+          <option name="id" value="c6f608ee-766d-4fe4-99f1-68dd9631849b" />
+          <option name="name" value="@localhost (DDL)" />
+          <option name="languageId" value="MySQL" />
+          <option name="urls">
+            <array>
+              <option value="file://$PROJECT_DIR$/db_sistema_inventario/01_create_sistema_inventario.sql" />
+              <option value="file://$PROJECT_DIR$/db_sistema_inventario/02_create_tabelas.sql" />
+              <option value="file://$PROJECT_DIR$/db_sistema_inventario/03_create_foreign_keys.sql" />
+              <option value="file://$PROJECT_DIR$/db_sistema_inventario/04_inserts.sql" />
+            </array>
+          </option>
+        </State>
+      </list>
+    </option>
+  </component>
+</project>
